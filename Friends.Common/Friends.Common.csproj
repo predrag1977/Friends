@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DI\" />
+    <None Remove="Domain\" />
+    <None Remove="Data\" />
+    <None Remove="Application\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DI\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Data\" />
+    <Folder Include="Application\" />
+  </ItemGroup>
+</Project>
