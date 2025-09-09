@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{1CAD37E5-D107-4590-87E2-EA6FEABFE581}|Default">
+  <MonoDevelop.Ide.ItemProperties.Friends.Common.Test FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_9a" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Friends.Android/MainActivity.cs">
+    <Files>
+      <File FileName="Friends.Common/DI/ServicesProvider.cs" Line="13" Column="53" />
+      <File FileName="Friends.Android/MainActivity.cs" Line="15" Column="72" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Friends" expanded="True">
+            <Node name="Friends.Android">
+              <Node name="References" expanded="True" />
+              <Node name="Packages" expanded="True" />
+            </Node>
+            <Node name="Friends.Common" selected="True">
+              <Node name="DI" expanded="True" />
+            </Node>
+            <Node name="Friends.iOS">
+              <Node name="Packages" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Friends.Android PreferredExecutionTarget="Android.Pixel_9a" />
+</Properties>

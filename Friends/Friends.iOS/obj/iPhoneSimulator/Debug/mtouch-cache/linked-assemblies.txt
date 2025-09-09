@@ -1,0 +1,11 @@
+RemoveDynamicRegistrar:false
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/Friends.iOS.exe
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/mscorlib.dll
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/Xamarin.iOS.dll
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/System.dll
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/Mono.Security.dll
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/System.Xml.dll
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/System.Numerics.dll
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/System.Core.dll
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/System.Net.Http.dll
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/bin/iPhoneSimulator/Debug/Friends.iOS.app:/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/mtouch-cache/1-Link/System.Drawing.Common.dll

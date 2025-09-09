@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "BUwQsjTsADbzN58VAH+gFdw3Ak9zz32nhvQhm16Et3lH2N+IQYIG219PtfzEf8RQaFjLaDjPrsBgb/XZVByA4Q==",
+  "success": true,
+  "projectFilePath": "/Users/predrag/Projects/Friends/Friends/Friends.iOS/Friends.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/predrag/.nuget/packages/microsoft.bcl.asyncinterfaces/9.0.9/microsoft.bcl.asyncinterfaces.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.9/microsoft.extensions.configuration.abstractions.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.9/microsoft.extensions.dependencyinjection.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.9/microsoft.extensions.dependencyinjection.abstractions.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/microsoft.extensions.http/9.0.9/microsoft.extensions.http.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/microsoft.extensions.logging/9.0.9/microsoft.extensions.logging.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.9/microsoft.extensions.logging.abstractions.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/microsoft.extensions.options/9.0.9/microsoft.extensions.options.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/microsoft.extensions.primitives/9.0.9/microsoft.extensions.primitives.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.diagnostics.diagnosticsource/9.0.9/system.diagnostics.diagnosticsource.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.io.pipelines/9.0.9/system.io.pipelines.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.net.http.json/9.0.9/system.net.http.json.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.text.encodings.web/9.0.9/system.text.encodings.web.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.text.json/9.0.9/system.text.json.9.0.9.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "/Users/predrag/.nuget/packages/xamarin.essentials/1.8.1/xamarin.essentials.1.8.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,31 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/predrag/Projects/Friends/Friends.Common/Friends.Common.csproj": {}
+    "/Users/predrag/Projects/Friends/Friends/Friends.Common/Friends.Common.csproj": {}
   },
   "projects": {
-    "/Users/predrag/Projects/Friends/Friends.Common/Friends.Common.csproj": {
+    "/Users/predrag/Projects/Friends/Friends/Friends.Common/Friends.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/predrag/Projects/Friends/Friends.Common/Friends.Common.csproj",
+        "projectUniqueName": "/Users/predrag/Projects/Friends/Friends/Friends.Common/Friends.Common.csproj",
         "projectName": "Friends.Common",
-        "projectPath": "/Users/predrag/Projects/Friends/Friends.Common/Friends.Common.csproj",
+        "projectPath": "/Users/predrag/Projects/Friends/Friends/Friends.Common/Friends.Common.csproj",
         "packagesPath": "/Users/predrag/.nuget/packages/",
-        "outputPath": "/Users/predrag/Projects/Friends/Friends.Common/obj/",
+        "outputPath": "/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/predrag/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "netstandard2.0"
         ],
         "sources": {
           "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -36,8 +36,32 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -49,12 +73,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
         }
       }
     }

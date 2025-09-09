@@ -1,0 +1,11 @@
+/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/Debug/netstandard2.0/Friends.Common.csproj.AssemblyReference.cache
+/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/Debug/netstandard2.0/Friends.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/Debug/netstandard2.0/Friends.Common.AssemblyInfoInputs.cache
+/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/Debug/netstandard2.0/Friends.Common.AssemblyInfo.cs
+/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/Debug/netstandard2.0/Friends.Common.csproj.CoreCompileInputs.cache
+/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/Debug/netstandard2.0/Friends.Common.sourcelink.json
+/Users/predrag/Projects/Friends/Friends/Friends.Common/bin/Debug/netstandard2.0/Friends.Common.deps.json
+/Users/predrag/Projects/Friends/Friends/Friends.Common/bin/Debug/netstandard2.0/Friends.Common.dll
+/Users/predrag/Projects/Friends/Friends/Friends.Common/bin/Debug/netstandard2.0/Friends.Common.pdb
+/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/Debug/netstandard2.0/Friends.Common.dll
+/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/Debug/netstandard2.0/Friends.Common.pdb
