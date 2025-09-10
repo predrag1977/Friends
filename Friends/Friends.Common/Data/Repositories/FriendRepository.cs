@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading;
@@ -14,10 +13,17 @@ namespace Friends.Common.Data.Repositories
 	public class FriendRepository : IFriendRepository
 	{
         private readonly HttpClient _httpClient;
+        private IFriendCache _friendCache;
 
-        public FriendRepository(HttpClient httpClient)
+        public FriendRepository(HttpClient httpClient, IFriendCache friendCache)
 		{
             _httpClient = httpClient;
+            _friendCache = friendCache;
+        }
+
+        public Friend GetFriendById(string id)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<List<Friend>> GetFriendsAsync(CancellationToken ct = default)
@@ -25,7 +31,9 @@ namespace Friends.Common.Data.Repositories
             try
             {
                 var friendResponse = await _httpClient.GetFromJsonAsync<FriendResponse>("golf/friends.json", ct);
-                return friendResponse?.Friends ?? new List<Friend>();
+                var friends = friendResponse?.Friends ?? new List<Friend>();
+                _friendCache.SetFriends(friends);
+                return friends ?? new List<Friend>();
             }
             catch(Exception ex)
             {

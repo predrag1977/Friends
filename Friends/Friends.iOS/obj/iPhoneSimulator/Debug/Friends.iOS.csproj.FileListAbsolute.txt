@@ -28,6 +28,7 @@
 /Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/_ProcessedBundleResourcesPath.items
 /Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/_ProcessedContentPath.items
 /Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/optimized/
+/Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/Friends.iOS.csproj.AssemblyReference.cache
 /Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/resourcestamps/Microsoft.Bcl.AsyncInterfaces.stamp
 /Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/resourcestamps/Microsoft.Extensions.Configuration.Abstractions.stamp
 /Users/predrag/Projects/Friends/Friends/Friends.iOS/obj/iPhoneSimulator/Debug/resourcestamps/Microsoft.Extensions.DependencyInjection.Abstractions.stamp

@@ -18,7 +18,13 @@ namespace Friends.Android
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            SupportFragmentManager.BeginTransaction().Replace(Resource.Id.container, new FriendsFragment());
+            if (savedInstanceState == null)
+            {
+                SupportFragmentManager
+                    .BeginTransaction()
+                    .Replace(Resource.Id.container, new FriendsFragment())
+                    .Commit();
+            }
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

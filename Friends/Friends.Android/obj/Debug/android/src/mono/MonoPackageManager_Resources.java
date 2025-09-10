@@ -19,8 +19,12 @@ public class MonoPackageManager_Resources {
 		"System.Net.Http.Json.dll",
 		"System.Text.Encodings.Web.dll",
 		"System.Text.Json.dll",
+		"Xamarin.Android.Glide.DiskLruCache.dll",
+		"Xamarin.Android.Glide.dll",
+		"Xamarin.Android.Glide.GifDecoder.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",
+		"Xamarin.AndroidX.Annotation.Experimental.dll",
 		"Xamarin.AndroidX.AppCompat.AppCompatResources.dll",
 		"Xamarin.AndroidX.AppCompat.dll",
 		"Xamarin.AndroidX.Arch.Core.Common.dll",
@@ -35,6 +39,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.CustomView.dll",
 		"Xamarin.AndroidX.DocumentFile.dll",
 		"Xamarin.AndroidX.DrawerLayout.dll",
+		"Xamarin.AndroidX.ExifInterface.dll",
 		"Xamarin.AndroidX.Fragment.dll",
 		"Xamarin.AndroidX.Interpolator.dll",
 		"Xamarin.AndroidX.Legacy.Support.Core.UI.dll",
@@ -60,6 +65,9 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Essentials.dll",
 		"Xamarin.Google.Android.Material.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"Xamarin.Jetbrains.Annotations.dll",
+		"Xamarin.Kotlin.StdLib.Common.dll",
+		"Xamarin.Kotlin.StdLib.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

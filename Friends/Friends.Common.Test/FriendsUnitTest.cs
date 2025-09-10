@@ -1,5 +1,6 @@
 ﻿using Friends.Common.Data.Repositories;
 using Friends.Common.DI;
+using Friends.Common.Domain.Interfaces;
 using Friends.Common.Domain.Models;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,7 +14,8 @@ public class FriendsUnitTest
     public async void TestGetFriendsAsync()
     {
         var httpClient = serviceProvider.GetService<HttpClient>();
-        var friendRepository = new FriendRepository(httpClient);
+        var friendCache = serviceProvider.GetService<IFriendCache>();
+        var friendRepository = new FriendRepository(httpClient, friendCache);
 
         List<Friend> friends = await friendRepository.GetFriendsAsync();
         Assert.True(friends.Count > 0);

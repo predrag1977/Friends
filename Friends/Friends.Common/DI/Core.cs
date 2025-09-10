@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Net.Http;
 using Friends.Common.Application.UsesCases;
 using Friends.Common.Application.ViewModels;
+using Friends.Common.Data.Cache;
 using Friends.Common.Data.Repositories;
 using Friends.Common.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,19 +15,21 @@ namespace Friends.Common.DI
 
         public static IServiceProvider Build()
 		{
-			var service = new ServiceCollection();
+			var services = new ServiceCollection();
 
-			service.AddHttpClient("", c => {
-				c.BaseAddress = new Uri(baseUri);
-				c.Timeout = TimeSpan.FromSeconds(15);
+            services.AddSingleton(new HttpClient
+            {
+                BaseAddress = new Uri(baseUri),
+                Timeout = TimeSpan.FromSeconds(15)
             });
 
-			service.AddSingleton<IFriendRepository, FriendRepository>();
+            services.AddSingleton<IFriendCache, FriendCache>();
+            services.AddSingleton<IFriendRepository, FriendRepository>();
 
-			service.AddSingleton<GetFriendUseCase>();
-			service.AddTransient<FriendsViewModel>();
+			services.AddSingleton<GetFriendUseCase>();
+			services.AddTransient<FriendsViewModel>();
 
-			return service.BuildServiceProvider();
+			return services.BuildServiceProvider();
 		}
 	}
 }

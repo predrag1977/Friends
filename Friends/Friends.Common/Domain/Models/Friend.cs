@@ -9,6 +9,9 @@
         public string ProfilePictureUrl { get; set; }
         public bool IsFriend { get; set; }
         public int MajorsWon { get; set; }
+
+        public string FullName => $"{FirstName} {LastName}";
+        public string Id => $"{FirstName}_{LastName}".ToLowerInvariant();
     }
 }
 

@@ -6,6 +6,7 @@
 /Users/predrag/Projects/Friends/Friends/Friends.Common.Test/bin/Debug/net8.0/Friends.Common.Test.runtimeconfig.json
 /Users/predrag/Projects/Friends/Friends/Friends.Common.Test/bin/Debug/net8.0/Friends.Common.Test.dll
 /Users/predrag/Projects/Friends/Friends/Friends.Common.Test/bin/Debug/net8.0/Friends.Common.Test.pdb
+/Users/predrag/Projects/Friends/Friends/Friends.Common.Test/bin/Debug/net8.0/CommunityToolkit.Mvvm.dll
 /Users/predrag/Projects/Friends/Friends/Friends.Common.Test/bin/Debug/net8.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
 /Users/predrag/Projects/Friends/Friends/Friends.Common.Test/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll
 /Users/predrag/Projects/Friends/Friends/Friends.Common.Test/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
