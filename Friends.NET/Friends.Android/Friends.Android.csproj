@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0-android</TargetFramework>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
@@ -14,9 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Activities\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Activities\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Android.Glide" Version="4.16.0.14" />
