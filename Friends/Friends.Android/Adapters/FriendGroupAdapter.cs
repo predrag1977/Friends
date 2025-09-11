@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
@@ -9,9 +8,9 @@ namespace Friends.Android.Adapters
 {
 	public class FriendGroupAdapter : RecyclerView.Adapter
 	{
-        private readonly ObservableCollection<FriendGroup> friendGroupList;
+        private readonly List<FriendGroup> friendGroupList;
 
-        public FriendGroupAdapter(ObservableCollection<FriendGroup> friendGroupList)
+        public FriendGroupAdapter(List<FriendGroup> friendGroupList)
 		{
             this.friendGroupList = friendGroupList;
         }

@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Friends.Common.Application.UsesCases;
 using Friends.Common.Domain.Models;
 

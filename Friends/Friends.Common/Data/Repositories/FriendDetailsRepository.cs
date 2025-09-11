@@ -20,7 +20,7 @@ namespace Friends.Common.Data.Repositories
 
         public Task<Friend> GetFriendByIdAsync(int id)
         {
-            //TODO: Imlement get Friend from Api
+            //TODO: Implement get Friend from Api
             throw new NotImplementedException();
         }
 

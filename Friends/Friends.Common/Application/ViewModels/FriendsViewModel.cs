@@ -1,37 +1,51 @@
 ﻿
+using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Friends.Common.Application.Models;
 using Friends.Common.Application.UsesCases;
+using Friends.Common.Domain.Models;
 
 namespace Friends.Common.Application.ViewModels
 {
-	public partial class FriendsViewModel : ObservableObject
-	{
+    public partial class FriendsViewModel : ObservableObject
+    {
         private readonly GetFriendUseCase _getFriendsUseCase;
 
-        public FriendsViewModel(GetFriendUseCase getFriendsUseCase)
-		{
-			_getFriendsUseCase = getFriendsUseCase;
-
-			LoadFriendsAsync();
-        }
+        public Action<string> SearchTextChanged = (searchText) => SearchTextChangedAction(searchText);
 
         [ObservableProperty]
-        public ObservableCollection<FriendGroup> friendGroupList;
+        public List<FriendGroup> friendGroupList;
+
+        public FriendsViewModel(GetFriendUseCase getFriendsUseCase)
+        {
+            _getFriendsUseCase = getFriendsUseCase;
+
+            LoadFriendsAsync();
+        }
 
         private async void LoadFriendsAsync()
         {
             var friendList = await _getFriendsUseCase.ExecuteAsync();
-            var friendGroups = friendList.GroupBy(x => x.IsFriend)
+            SetFriendGroupList(friendList);
+        }
+
+        private void SetFriendGroupList(List<Friend> friendList)
+        {
+            FriendGroupList = friendList.GroupBy(x => x.IsFriend)
                 .Select(group => new FriendGroup()
                 {
                     IsFriend = group.Key,
                     Items = group.ToList()
-                });
-            FriendGroupList = new ObservableCollection<FriendGroup>(friendGroups);
+                })
+                .OrderByDescending(x=>x.IsFriend)
+                .ToList();
+        }
+
+        private static void SearchTextChangedAction(string searchText)
+        {
+            //TODO: Imlement Action with searching friends
         }
     }
 }

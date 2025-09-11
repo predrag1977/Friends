@@ -56,6 +56,9 @@ namespace Friends.Android.Activities
 
             var description = FindViewById<TextView>(Resource.Id.description);
             description.Text = GetString(Resource.String.description, friend.FirstName);
+
+            var backButton = FindViewById<ImageView>(Resource.Id.backBtn);
+            backButton.Click += (s, e) => Finish();
         }
     }
 }
