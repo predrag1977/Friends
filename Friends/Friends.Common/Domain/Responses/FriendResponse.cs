@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Friends.Common.Domain.Models;
+using Friends.Common.Data.Models;
 
 namespace Friends.Common.Domain.Responses
 {
 	public class FriendResponse
 	{
-		public List<Friend> Friends { get; set; }
+		public List<ApiFriend> Friends { get; set; }
 	}
 }
 

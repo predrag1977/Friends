@@ -42,7 +42,6 @@ namespace Friends.Android.Activities
             Glide.With(this)
                  .Load(friend.ProfilePictureUrl)
                  .CircleCrop()
-                 .Placeholder(Resource.Mipmap.ic_launcher_round)
                  .Into(photoImageView);
 
             var fullNameTextView = FindViewById<TextView>(Resource.Id.fullName);

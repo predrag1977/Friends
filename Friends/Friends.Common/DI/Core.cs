@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Net.Http;
+using AutoMapper;
 using Friends.Common.Application.UsesCases;
 using Friends.Common.Application.ViewModels;
 using Friends.Common.Data.Cache;
+using Friends.Common.Data.Mappings;
 using Friends.Common.Data.Repositories;
 using Friends.Common.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +24,8 @@ namespace Friends.Common.DI
                 BaseAddress = new Uri(baseUri),
                 Timeout = TimeSpan.FromSeconds(15)
             });
+
+            services.AddAutoMapper(typeof(ApiToDomainProfile).Assembly);
 
             services.AddSingleton<IFriendCache, FriendCache>();
             services.AddSingleton<IFriendRepository, FriendRepository>();
