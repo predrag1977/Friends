@@ -7,15 +7,14 @@ using Friends.Android;
 using Friends.Android.Adapters;
 using Friends.Common.Application.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
-using Fragment = AndroidX.Fragment.App.Fragment;
 
 public class FriendsFragment : Fragment
 {
-    private RecyclerView friendsRecyclerView;
-    private FriendsViewModel friendsViewModel;
+    private RecyclerView friendsRecyclerView = null!;
+    private FriendsViewModel friendsViewModel = null!;
 
     public override void OnCreate(Bundle savedInstanceState)
-     {
+    {
         base.OnCreate(savedInstanceState);
     }
 
@@ -29,12 +28,12 @@ public class FriendsFragment : Fragment
         base.OnViewCreated(view, savedInstanceState);
         friendsRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.friend_groups_recyclerView);
 
-        friendsViewModel = MainApplication.Services.GetService<FriendsViewModel>();
+        friendsViewModel = MainApplication.Services.GetService<FriendsViewModel>()!;
         friendsViewModel.PropertyChanged += FriendsViewModel_PropertyChanged;
         PopulateView();
     }
 
-    private void FriendsViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+    private void FriendsViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
         PopulateView();
     }

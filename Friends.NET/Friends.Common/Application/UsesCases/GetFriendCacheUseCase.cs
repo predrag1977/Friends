@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Friends.Common.Domain.Interfaces;
+﻿using Friends.Common.Domain.Interfaces;
 using Friends.Common.Domain.Models;
 
 namespace Friends.Common.Application.UsesCases
@@ -16,8 +15,6 @@ namespace Friends.Common.Application.UsesCases
 		public async Task<Friend> ExecuteAsync(string id)
 		{
 			return await _friendDetailsRepository.GetFriendFromCacheAsync(id);
-
-
         }
 	}
 }
