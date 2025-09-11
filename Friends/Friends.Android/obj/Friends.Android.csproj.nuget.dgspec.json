@@ -82,12 +82,13 @@
         "outputPath": "/Users/predrag/Projects/Friends/Friends/Friends.Common/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/predrag/.config/NuGet/NuGet.Config"
+          "/Users/predrag/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -135,11 +136,12 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/Users/predrag/Library/Caches/VisualStudio/17.0/MSBuild/7549_3/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
         }
       }
     }

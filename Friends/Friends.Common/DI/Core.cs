@@ -25,11 +25,15 @@ namespace Friends.Common.DI
 
             services.AddSingleton<IFriendCache, FriendCache>();
             services.AddSingleton<IFriendRepository, FriendRepository>();
+            services.AddSingleton<IFriendDetailsRepository, FriendDetailsRepository>();
 
-			services.AddSingleton<GetFriendUseCase>();
-			services.AddTransient<FriendsViewModel>();
+            services.AddSingleton<GetFriendUseCase>();
+            services.AddSingleton<GetFriendCacheUseCase>();
 
-			return services.BuildServiceProvider();
+            services.AddTransient<FriendsViewModel>();
+            services.AddTransient<FriendDetailsViewModel>();
+
+            return services.BuildServiceProvider();
 		}
 	}
 }

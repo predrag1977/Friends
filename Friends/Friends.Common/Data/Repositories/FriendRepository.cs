@@ -21,11 +21,6 @@ namespace Friends.Common.Data.Repositories
             _friendCache = friendCache;
         }
 
-        public Friend GetFriendById(string id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<List<Friend>> GetFriendsAsync(CancellationToken ct = default)
         {
             try

@@ -27,7 +27,7 @@ public class FriendsFragment : Fragment
     public override void OnViewCreated(View view, Bundle savedInstanceState)
     {
         base.OnViewCreated(view, savedInstanceState);
-        friendsRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.friends_recyclerView);
+        friendsRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.friend_groups_recyclerView);
 
         friendsViewModel = MainApplication.Services.GetService<FriendsViewModel>();
         friendsViewModel.PropertyChanged += FriendsViewModel_PropertyChanged;
@@ -42,7 +42,7 @@ public class FriendsFragment : Fragment
     private void PopulateView()
     {
         friendsRecyclerView.SetLayoutManager(new LinearLayoutManager(Context));
-        friendsRecyclerView.SetAdapter(new FriendAdapter(friendsViewModel.FriendList));
+        friendsRecyclerView.SetAdapter(new FriendGroupAdapter(friendsViewModel.FriendGroupList));
     }
 }
 

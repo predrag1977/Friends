@@ -1,9 +1,10 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
+using Friends.Common.Application.Models;
 using Friends.Common.Application.UsesCases;
-using Friends.Common.Domain.Models;
 
 namespace Friends.Common.Application.ViewModels
 {
@@ -15,15 +16,22 @@ namespace Friends.Common.Application.ViewModels
 		{
 			_getFriendsUseCase = getFriendsUseCase;
 
-			_ = LoadFriendsAsync();
+			LoadFriendsAsync();
         }
 
         [ObservableProperty]
-        public List<Friend> friendList;
+        public ObservableCollection<FriendGroup> friendGroupList;
 
-        private async Task LoadFriendsAsync()
+        private async void LoadFriendsAsync()
         {
-            FriendList = await _getFriendsUseCase.ExecuteAsync();
+            var friendList = await _getFriendsUseCase.ExecuteAsync();
+            var friendGroups = friendList.GroupBy(x => x.IsFriend)
+                .Select(group => new FriendGroup()
+                {
+                    IsFriend = group.Key,
+                    Items = group.ToList()
+                });
+            FriendGroupList = new ObservableCollection<FriendGroup>(friendGroups);
         }
     }
 }

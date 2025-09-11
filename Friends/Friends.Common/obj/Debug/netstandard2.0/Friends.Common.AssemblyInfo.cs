@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Friends.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73f7bb125c4e155380b28117da84429c700fb2ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66fafd866e837e6507e3df89f04b2bcf804ede27")]
 [assembly: System.Reflection.AssemblyProductAttribute("Friends.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Friends.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
