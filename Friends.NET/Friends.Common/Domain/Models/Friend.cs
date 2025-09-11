@@ -11,7 +11,6 @@ namespace Friends.Common.Domain.Models
         public string ProfilePictureUrl { get; set; } = "";
         public bool IsFriend { get; set; }
         public int MajorsWon { get; set; }
-
         public string Id { get; set; } = "";
         public string FullName { get; set; } = "";
         public string Age { get; set; } = "";

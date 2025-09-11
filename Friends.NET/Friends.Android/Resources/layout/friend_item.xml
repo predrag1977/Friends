@@ -40,7 +40,7 @@
     <!-- Chevron -->
     <ImageView
         android:id="@+id/forward_image_view"
-        android:src="@andoid:drawable/abc_ic_arrow_drop_right_black_24dp"
+        android:src="@drawable/ic_chevron_right"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:tint="#C0C0C0"

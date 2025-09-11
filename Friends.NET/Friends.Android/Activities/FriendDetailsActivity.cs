@@ -11,7 +11,7 @@ namespace Friends.Android.Activities
 	{
         private FriendDetailsViewModel friendDetailsViewModel = null!;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle? savedInstanceState)
         {
             base.OnCreate (savedInstanceState);
             SetContentView(Resource.Layout.activity_friend_details);
@@ -31,28 +31,27 @@ namespace Friends.Android.Activities
 
         private void PopulateView()
         {
-            var friend = friendDetailsViewModel.Friend;
+            var friend = friendDetailsViewModel.Friend!;
 
-            var photoImageView = FindViewById<ImageView>(Resource.Id.photo);
+            var photoImageView = FindViewById<ImageView>(Resource.Id.photo)!;
             Glide.With(this)
                  .Load(friend.ProfilePictureUrl)
                  .CircleCrop()
-                 .Placeholder(Resource.Mipmap.ic_launcher_round)
                  .Into(photoImageView);
 
-            var fullNameTextView = FindViewById<TextView>(Resource.Id.fullName);
-            fullNameTextView.Text = friendDetailsViewModel.Friend.FullName;
+            var fullNameTextView = FindViewById<TextView>(Resource.Id.fullName)!;
+            fullNameTextView.Text = friend.FullName;
 
-            var nickNameTextView = FindViewById<TextView>(Resource.Id.nickName);
-            nickNameTextView.Text = friendDetailsViewModel.Friend.NickName;
+            var nickNameTextView = FindViewById<TextView>(Resource.Id.nickName)!;
+            nickNameTextView.Text = friend.NickName;
 
-            var ageTextView = FindViewById<TextView>(Resource.Id.age);
+            var ageTextView = FindViewById<TextView>(Resource.Id.age)!;
             ageTextView.Text = friend.Age;
 
-            var description = FindViewById<TextView>(Resource.Id.description);
-            description.Text = GetString(Resource.String.description, friend.FirstName);
+            var description = FindViewById<TextView>(Resource.Id.description)!;
+            description.Text = GetString(Resource.String.description, friend.FirstName!);
 
-            var backButton = FindViewById<ImageView>(Resource.Id.backBtn);
+            var backButton = FindViewById<ImageView>(Resource.Id.backBtn)!;
             backButton.Click += (s, e) => Finish();
         }
     }

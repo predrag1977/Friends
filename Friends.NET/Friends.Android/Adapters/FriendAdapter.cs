@@ -37,7 +37,6 @@ namespace Friends.Android.Adapters
             Glide.With(context)
                  .Load(friend.ProfilePictureUrl)
                  .CircleCrop()
-                 .Placeholder(Resource.Mipmap.ic_launcher_round)
                  .Into(viewHolder.PhotoImageView);
 
             viewHolder.FriendNameTextView.Text = friend.FullName;
