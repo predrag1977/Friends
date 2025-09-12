@@ -13,10 +13,14 @@ namespace Friends.Common.Application.ViewModels
     {
         private readonly GetFriendUseCase _getFriendsUseCase;
 
-        public Action<string> SearchTextChanged = (searchText) => SearchTextChangedAction(searchText);
+        [ObservableProperty]
+        public List<Friend> allFriendList;
 
         [ObservableProperty]
         public List<FriendGroup> friendGroupList;
+
+        [ObservableProperty]
+        public string searchText;
 
         public FriendsViewModel(GetFriendUseCase getFriendsUseCase)
         {
@@ -27,8 +31,7 @@ namespace Friends.Common.Application.ViewModels
 
         private async void LoadFriendsAsync()
         {
-            var friendList = await _getFriendsUseCase.ExecuteAsync();
-            SetFriendGroupList(friendList);
+            AllFriendList = await _getFriendsUseCase.ExecuteAsync();
         }
 
         private void SetFriendGroupList(List<Friend> friendList)
@@ -43,9 +46,18 @@ namespace Friends.Common.Application.ViewModels
                 .ToList();
         }
 
-        private static void SearchTextChangedAction(string searchText)
+        partial void OnAllFriendListChanged(List<Friend> value)
         {
-            //TODO: Imlement Action with searching friends
+            SetFriendGroupList(value);
+        }
+
+        partial void OnSearchTextChanged(string value)
+        {
+            var filteredList = AllFriendList
+                .Where(x => x.FirstName.StartsWith(value, StringComparison.OrdinalIgnoreCase) ||
+                x.LastName.StartsWith(value, StringComparison.OrdinalIgnoreCase) ||
+                x.NickName.StartsWith(value, StringComparison.OrdinalIgnoreCase)).ToList();
+            SetFriendGroupList(filteredList);
         }
     }
 }

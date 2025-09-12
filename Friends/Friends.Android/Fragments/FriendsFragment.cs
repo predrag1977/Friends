@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using Android.OS;
 using Android.Views;
+using Android.Widget;
 using AndroidX.Fragment.App;
 using AndroidX.RecyclerView.Widget;
 using Friends.Android;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 public class FriendsFragment : Fragment
 {
     private RecyclerView friendsRecyclerView;
+    private EditText searchEditText;
     private FriendsViewModel friendsViewModel;
 
     public override void OnCreate(Bundle savedInstanceState)
@@ -26,10 +28,16 @@ public class FriendsFragment : Fragment
     public override void OnViewCreated(View view, Bundle savedInstanceState)
     {
         base.OnViewCreated(view, savedInstanceState);
-        friendsRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.friend_groups_recyclerView);
 
         friendsViewModel = MainApplication.Services.GetRequiredService<FriendsViewModel>();
         friendsViewModel.PropertyChanged += FriendsViewModel_PropertyChanged;
+
+        friendsRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.friend_groups_recyclerView);
+        searchEditText = view.FindViewById<EditText>(Resource.Id.search_text);
+        searchEditText.TextChanged += (s, e) =>
+        {
+            friendsViewModel.SearchText = ((EditText)s).Text;
+        };
         PopulateView();
     }
 

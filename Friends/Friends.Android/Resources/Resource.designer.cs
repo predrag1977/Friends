@@ -3920,34 +3920,34 @@ namespace Friends.Android
 			public const int scrollView = 2131230894;
 			
 			// aapt resource value: 0x7F0800B0
-			public const int searchHint = 2131230896;
+			public const int search_badge = 2131230896;
 			
 			// aapt resource value: 0x7F0800B1
-			public const int search_badge = 2131230897;
+			public const int search_bar = 2131230897;
 			
 			// aapt resource value: 0x7F0800B2
-			public const int search_bar = 2131230898;
+			public const int search_button = 2131230898;
 			
 			// aapt resource value: 0x7F0800B3
-			public const int search_button = 2131230899;
+			public const int search_close_btn = 2131230899;
 			
 			// aapt resource value: 0x7F0800B4
-			public const int search_close_btn = 2131230900;
+			public const int search_edit_frame = 2131230900;
 			
 			// aapt resource value: 0x7F0800B5
-			public const int search_edit_frame = 2131230901;
+			public const int search_go_btn = 2131230901;
 			
 			// aapt resource value: 0x7F0800B6
-			public const int search_go_btn = 2131230902;
+			public const int search_mag_icon = 2131230902;
 			
 			// aapt resource value: 0x7F0800B7
-			public const int search_mag_icon = 2131230903;
+			public const int search_plate = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int search_plate = 2131230904;
+			public const int search_src_text = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int search_src_text = 2131230905;
+			public const int search_text = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
 			public const int search_voice_btn = 2131230906;
@@ -4636,10 +4636,13 @@ namespace Friends.Android
 			public const int recently_played = 2131558448;
 			
 			// aapt resource value: 0x7F0D0031
-			public const int search_menu_title = 2131558449;
+			public const int search_hint = 2131558449;
 			
 			// aapt resource value: 0x7F0D0032
-			public const int status_bar_notification_info_overflow = 2131558450;
+			public const int search_menu_title = 2131558450;
+			
+			// aapt resource value: 0x7F0D0033
+			public const int status_bar_notification_info_overflow = 2131558451;
 			
 			static String()
 			{
