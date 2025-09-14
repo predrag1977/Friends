@@ -70,7 +70,7 @@ namespace Friends.Android.Activities
                  .Into(photoImageView);
             fullNameTextView.Text = friend.FullName;
             nickNameTextView.Text = friend.NickName;
-            ageTextView.Text = friend.Age;
+            ageTextView.Text = GetString(Resource.String.age, friend.Age);
             description.Text = GetString(Resource.String.description, friend.FirstName);
             friendImageView.Alpha = friend.IsFriend ? 1f : 0.5f;
         }

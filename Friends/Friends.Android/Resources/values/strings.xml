@@ -6,5 +6,6 @@
     <string name="recently_played">Recently Played</string>
     <string name="search_hint">Search by name, lastname or nickname</string>
     <string name="description">You can play recorded Virtual Golf rounds with %s in TrackMan Performance Studio (TPS). More Friends functionalities will be available soon.</string>
+    <string name="age">%s yrs</string>
 </resources>
 
