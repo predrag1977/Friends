@@ -10,6 +10,7 @@ namespace Friends.Common.Data.Models
         public string ProfilePictureUrl { get; set; }
         public bool IsFriend { get; set; }
         public int MajorsWon { get; set; }
+
     }
 }
 

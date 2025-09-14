@@ -11,12 +11,10 @@ namespace Friends.Android.Adapters
 	public class FriendGroupAdapter : RecyclerView.Adapter
 	{
         private List<FriendGroup> friendGroupList;
-        private Action<Friend> onChangeIsFriend;
 
-        public FriendGroupAdapter(List<FriendGroup> friendGroupList, Action<Friend> onChangeIsFriend)
+        public FriendGroupAdapter(List<FriendGroup> friendGroupList)
         {
             this.friendGroupList = friendGroupList;
-            this.onChangeIsFriend = onChangeIsFriend;
         }
 
         public override int ItemCount => friendGroupList?.Count ?? 0;
@@ -31,7 +29,7 @@ namespace Friends.Android.Adapters
             viewHolder.HeaderTextView.Text = context.GetString(headerStringResource);
 
             viewHolder.FriendRecyclerView.SetLayoutManager(new LinearLayoutManager(context));
-            viewHolder.FriendRecyclerView.SetAdapter(new FriendAdapter(friendGroup.Items, onChangeIsFriend));
+            viewHolder.FriendRecyclerView.SetAdapter(new FriendAdapter(friendGroup.Items));
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

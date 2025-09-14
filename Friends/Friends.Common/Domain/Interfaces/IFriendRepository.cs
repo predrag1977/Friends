@@ -7,7 +7,7 @@ namespace Friends.Common.Domain.Interfaces
 {
 	public interface IFriendRepository
 	{
-		Task<List<Friend>> GetFriendsAsync(CancellationToken ct);
+		Task<List<Friend>> GetFriendsAsync(CancellationToken ct = default);
 	}
 }
 

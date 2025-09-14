@@ -4,21 +4,18 @@ using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using Bumptech.Glide;
 using Friends.Android.Activities;
-using Friends.Common.Domain.Models;
-using System;
+using Friends.Common.Application.Models;
 using System.Collections.Generic;
 
 namespace Friends.Android.Adapters
 {
     public class FriendAdapter : RecyclerView.Adapter
     {
-        private readonly List<Friend> friendList;
-        private Action<Friend> onChangeIsFriend;
+        private readonly List<FriendUI> friendList;
 
-        public FriendAdapter(List<Friend> friendList, Action<Friend> onChangeIsFriend)
+        public FriendAdapter(List<FriendUI> friendList)
         {
             this.friendList = friendList;
-            this.onChangeIsFriend = onChangeIsFriend;
         }
 
         public override int ItemCount => friendList?.Count ?? 0;
@@ -42,7 +39,7 @@ namespace Friends.Android.Adapters
             viewHolder.FriendImageView.Alpha = friend.IsFriend ? 1f : 0.2f;
             viewHolder.FriendImageView.Click += (s, e) =>
             {
-                onChangeIsFriend(friend);
+                friend.IsFriend = !friend.IsFriend;
             };
             viewHolder.FriendNameTextView.Text = friend.FullName;
             viewHolder.NickNameTextView.Text = friend.NickName;

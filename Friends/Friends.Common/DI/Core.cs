@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Net.Http;
 using AutoMapper;
+using Friends.Common.Application.Interfaces;
+using Friends.Common.Application.Mappings;
+using Friends.Common.Application.Stores;
 using Friends.Common.Application.UsesCases;
 using Friends.Common.Application.ViewModels;
-using Friends.Common.Data.Cache;
 using Friends.Common.Data.Mappings;
 using Friends.Common.Data.Repositories;
 using Friends.Common.Domain.Interfaces;
@@ -25,7 +27,8 @@ namespace Friends.Common.DI
                 Timeout = TimeSpan.FromSeconds(15)
             });
 
-            services.AddAutoMapper(typeof(ApiToDomainProfile).Assembly);
+            services.AddAutoMapper(typeof(ApiToDomainProfile));
+            services.AddAutoMapper(typeof(DomainToUIProfile));
 
             services.AddSingleton<IFriendCache, FriendCache>();
             services.AddSingleton<IFriendRepository, FriendRepository>();

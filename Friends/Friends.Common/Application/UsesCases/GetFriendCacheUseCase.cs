@@ -1,23 +1,24 @@
-﻿using System.Threading.Tasks;
-using Friends.Common.Domain.Interfaces;
-using Friends.Common.Domain.Models;
+﻿using AutoMapper;
+using Friends.Common.Application.Interfaces;
+using Friends.Common.Application.Models;
 
 namespace Friends.Common.Application.UsesCases
 {
 	public class GetFriendCacheUseCase
 	{
-        private readonly IFriendDetailsRepository _friendDetailsRepository;
+        private readonly IFriendCache _friendCache;
+        private readonly IMapper _mapper;
 
-        public GetFriendCacheUseCase(IFriendDetailsRepository friendDetailsRepository)
+        public GetFriendCacheUseCase(IFriendCache friendCache, IMapper mapper)
 		{
-            _friendDetailsRepository = friendDetailsRepository;
+            _friendCache = friendCache;
+			_mapper = mapper;
         }
 
-		public async Task<Friend> ExecuteAsync(string id)
+		public FriendUI Execute(string id)
 		{
-			return await _friendDetailsRepository.GetFriendFromCacheAsync(id);
-
-
+			var friend = _friendCache.GetFriendById(id);
+			return _mapper.Map<FriendUI>(friend);
         }
 	}
 }

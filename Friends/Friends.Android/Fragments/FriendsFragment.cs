@@ -41,19 +41,13 @@ public class FriendsFragment : Fragment
         };
 
         friendsRecyclerView.SetLayoutManager(new LinearLayoutManager(Context));
-        friendGroupAdapter = new FriendGroupAdapter(friendsViewModel.FriendGroupList, friendsViewModel.ChangeIsFriend);
+        friendGroupAdapter = new FriendGroupAdapter(friendsViewModel.FriendGroupList);
         friendsRecyclerView.SetAdapter(friendGroupAdapter);
     }
 
     private void FriendsViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
     {
         friendGroupAdapter.Update(friendsViewModel.FriendGroupList);
-    }
-
-    public override void OnResume()
-    {
-        base.OnResume();
-        //friendGroupAdapter.Update(friendsViewModel.FriendGroupList);
     }
 }
 

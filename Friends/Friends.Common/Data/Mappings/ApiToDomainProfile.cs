@@ -10,10 +10,7 @@ namespace Friends.Common.Data.Mappings
 		public ApiToDomainProfile()
 		{
 			CreateMap<ApiFriend, Friend>()
-                .ForMember(des => des.Id, opt => opt.MapFrom(src => $"{Guid.NewGuid()}"))
-                .ForMember(des => des.Age, opt => opt.MapFrom(src => $"{DateTime.Today.Year - src.DateOfBirth.Year}"))
-				.ForMember(des => des.FullName, opt => opt.MapFrom(src => $"{src.FirstName} {src.LastName}"));
-
+				.ForMember(des => des.Id, opt => opt.MapFrom(src => $"{Guid.NewGuid()}"));
         }
 	}
 }

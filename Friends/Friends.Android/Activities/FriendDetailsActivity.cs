@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using Bumptech.Glide;
+using Friends.Common.Application.Models;
 using Friends.Common.Application.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,6 +21,7 @@ namespace Friends.Android.Activities
         private TextView ageTextView;
         private TextView description;
         private ImageView backButton;
+        private ImageView friendImageView;
 
         protected override void OnCreate (Bundle savedInstanceState)
         {
@@ -47,16 +49,21 @@ namespace Friends.Android.Activities
             {
                 Finish();
             };
+            friendImageView = FindViewById<ImageView>(Resource.Id.friend_image_view);
+            friendImageView.Click += (s, e) =>
+            {
+                friendDetailsViewModel.ChangeIsFriend();
+            };
         }
 
         private void FriendDetailsViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            UpdateView();
+            var friend = (sender as FriendDetailsViewModel).Friend;
+            UpdateView(friend);
         }
 
-        private void UpdateView()
+        private void UpdateView(FriendUI friend)
         {
-            var friend = friendDetailsViewModel.Friend;
             Glide.With(this)
                  .Load(friend.ProfilePictureUrl)
                  .CircleCrop()
@@ -65,6 +72,7 @@ namespace Friends.Android.Activities
             nickNameTextView.Text = friend.NickName;
             ageTextView.Text = friend.Age;
             description.Text = GetString(Resource.String.description, friend.FirstName);
+            friendImageView.Alpha = friend.IsFriend ? 1f : 0.5f;
         }
     }
 }

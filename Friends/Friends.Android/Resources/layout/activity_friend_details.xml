@@ -17,16 +17,40 @@
             android:layout_height="200dp"
             android:background="@drawable/bg_header_wave">
 
-            <!-- Back icon -->
-            <ImageView
-                android:id="@+id/backBtn"
-                android:clickable="true"
-                android:src="@drawable/ic_chevron_left"
-                android:tint="@android:color/white"
-                android:layout_margin="16dp"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription=""/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top">
+
+                <!-- Back icon -->
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:clickable="true"
+                    android:src="@drawable/ic_chevron_left"
+                    android:tint="@android:color/white"
+                    android:layout_margin="16dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription=""/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <!-- Friend/Unfriend icon -->
+                <ImageView
+                    android:id="@id/friend_image_view"
+                    android:clickable="true"
+                    android:src="@drawable/ic_friend"
+                    android:tint="@android:color/white"
+                    android:layout_margin="16dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription=""/>
+
+            </LinearLayout>
+            
         </FrameLayout>
 
         <!-- Avatar-->

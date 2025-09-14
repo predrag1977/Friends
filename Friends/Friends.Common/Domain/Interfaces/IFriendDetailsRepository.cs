@@ -7,7 +7,6 @@ namespace Friends.Common.Domain.Interfaces
 	public interface IFriendDetailsRepository
 	{
 		Task<Friend> GetFriendByIdAsync(int id);
-		Task<Friend> GetFriendFromCacheAsync(string id);
 	}
 }
 

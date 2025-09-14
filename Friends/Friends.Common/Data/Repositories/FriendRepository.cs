@@ -15,13 +15,11 @@ namespace Friends.Common.Data.Repositories
 	public class FriendRepository : IFriendRepository
 	{
         private readonly HttpClient _httpClient;
-        private readonly IFriendCache _friendCache;
         private readonly IMapper _mapper;
 
-        public FriendRepository(HttpClient httpClient, IFriendCache friendCache, IMapper mapper)
+        public FriendRepository(HttpClient httpClient, IMapper mapper)
 		{
             _httpClient = httpClient;
-            _friendCache = friendCache;
             _mapper = mapper;
         }
 
@@ -32,13 +30,26 @@ namespace Friends.Common.Data.Repositories
                 var friendResponse = await _httpClient.GetFromJsonAsync<FriendResponse>("golf/friends.json", ct);
                 var apiFriends = friendResponse?.Friends ?? new List<ApiFriend>();
                 var friends = _mapper.Map<List<Friend>>(apiFriends);
-                _friendCache.SetFriends(friends);
                 return friends;
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
                 return new List<Friend>();
+            }
+        }
+
+        public async Task<bool> PostFriendsAsync(Friend friend, CancellationToken ct = default)
+        {
+            try
+            {
+                var friendResponse = await _httpClient.PostAsJsonAsync("golf/friends.json", friend, ct);
+                return friendResponse.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
             }
         }
     }
