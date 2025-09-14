@@ -1,63 +1,70 @@
-﻿
-using System;
+﻿using System.ComponentModel;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Widget;
+using AndroidX.AppCompat.App;
 using Bumptech.Glide;
 using Friends.Common.Application.ViewModels;
-using Friends.Common.Domain.Models;
 using Microsoft.Extensions.DependencyInjection;
-using static AndroidX.RecyclerView.Widget.RecyclerView;
 
 namespace Friends.Android.Activities
 {
-	[Activity (Label = "FriendDetailsActivity")]			
-	public class FriendDetailsActivity : Activity
-	{
+	[Activity (Label = "@string/friend_details")]			
+	public class FriendDetailsActivity : AppCompatActivity
+    {
         private FriendDetailsViewModel friendDetailsViewModel;
+        private ImageView photoImageView;
+        private TextView fullNameTextView;
+        private TextView nickNameTextView;
+        private TextView ageTextView;
+        private TextView description;
+        private ImageView backButton;
 
         protected override void OnCreate (Bundle savedInstanceState)
         {
             base.OnCreate (savedInstanceState);
             SetContentView(Resource.Layout.activity_friend_details);
 
+            BindView();
+
             friendDetailsViewModel = MainApplication.Services.GetRequiredService<FriendDetailsViewModel>();
             friendDetailsViewModel.PropertyChanged += FriendDetailsViewModel_PropertyChanged;
 
             var friendId = Intent.GetStringExtra("friend_id") ?? string.Empty;
             friendDetailsViewModel.LoadAsync(friendId);
-            PopulateView();
         }
 
-        private void FriendDetailsViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void BindView()
         {
-            PopulateView();
+            photoImageView = FindViewById<ImageView>(Resource.Id.photo);
+            fullNameTextView = FindViewById<TextView>(Resource.Id.fullName);
+            nickNameTextView = FindViewById<TextView>(Resource.Id.nickName);
+            ageTextView = FindViewById<TextView>(Resource.Id.age);
+            description = FindViewById<TextView>(Resource.Id.description);
+            backButton = FindViewById<ImageView>(Resource.Id.backBtn);
+            backButton.Click += (s, e) =>
+            {
+                Finish();
+            };
         }
 
-        private void PopulateView()
+        private void FriendDetailsViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            UpdateView();
+        }
+
+        private void UpdateView()
         {
             var friend = friendDetailsViewModel.Friend;
-
-            var photoImageView = FindViewById<ImageView>(Resource.Id.photo);
             Glide.With(this)
                  .Load(friend.ProfilePictureUrl)
                  .CircleCrop()
                  .Into(photoImageView);
-
-            var fullNameTextView = FindViewById<TextView>(Resource.Id.fullName);
-            fullNameTextView.Text = friendDetailsViewModel.Friend.FullName;
-
-            var nickNameTextView = FindViewById<TextView>(Resource.Id.nickName);
-            nickNameTextView.Text = friendDetailsViewModel.Friend.NickName;
-
-            var ageTextView = FindViewById<TextView>(Resource.Id.age);
+            fullNameTextView.Text = friend.FullName;
+            nickNameTextView.Text = friend.NickName;
             ageTextView.Text = friend.Age;
-
-            var description = FindViewById<TextView>(Resource.Id.description);
             description.Text = GetString(Resource.String.description, friend.FirstName);
-
-            var backButton = FindViewById<ImageView>(Resource.Id.backBtn);
-            backButton.Click += (s, e) => Finish();
         }
     }
 }

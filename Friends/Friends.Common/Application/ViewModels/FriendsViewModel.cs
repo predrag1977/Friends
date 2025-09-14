@@ -1,6 +1,6 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Friends.Common.Application.Models;
@@ -13,8 +13,7 @@ namespace Friends.Common.Application.ViewModels
     {
         private readonly GetFriendUseCase _getFriendsUseCase;
 
-        [ObservableProperty]
-        public List<Friend> allFriendList;
+        private List<Friend> _allFriendList = new List<Friend>();
 
         [ObservableProperty]
         public List<FriendGroup> friendGroupList;
@@ -31,33 +30,37 @@ namespace Friends.Common.Application.ViewModels
 
         private async void LoadFriendsAsync()
         {
-            AllFriendList = await _getFriendsUseCase.ExecuteAsync();
+            _allFriendList = await _getFriendsUseCase.ExecuteAsync();
+            SetFriendGroupList(_allFriendList);
         }
 
         private void SetFriendGroupList(List<Friend> friendList)
         {
-            FriendGroupList = friendList.GroupBy(x => x.IsFriend)
+            FriendGroupList = friendList
+                .OrderBy(x=>x.FullName)
+                .GroupBy(x => x.IsFriend)
                 .Select(group => new FriendGroup()
                 {
                     IsFriend = group.Key,
                     Items = group.ToList()
                 })
-                .OrderByDescending(x=>x.IsFriend)
+                .OrderBy(x=>x.IsFriend)
                 .ToList();
-        }
-
-        partial void OnAllFriendListChanged(List<Friend> value)
-        {
-            SetFriendGroupList(value);
         }
 
         partial void OnSearchTextChanged(string value)
         {
-            var filteredList = AllFriendList
-                .Where(x => x.FirstName.StartsWith(value, StringComparison.OrdinalIgnoreCase) ||
+            var filteredList = _allFriendList.Where(x =>
+                x.FirstName.StartsWith(value, StringComparison.OrdinalIgnoreCase) ||
                 x.LastName.StartsWith(value, StringComparison.OrdinalIgnoreCase) ||
                 x.NickName.StartsWith(value, StringComparison.OrdinalIgnoreCase)).ToList();
             SetFriendGroupList(filteredList);
+        }
+
+        public void ChangeIsFriend(Friend friend)
+        {
+            _allFriendList.Find(x => x.Id == friend.Id).IsFriend = !friend.IsFriend;
+            SetFriendGroupList(_allFriendList);
         }
     }
 }

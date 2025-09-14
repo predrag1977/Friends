@@ -1,5 +1,6 @@
 ﻿<resources>
     <string name="app_name">Friends</string>
+    <string name="friend_details">Friend Details</string>
     <string name="action_settings">Settings</string>
     <string name="friends">Friends</string>
     <string name="recently_played">Recently Played</string>

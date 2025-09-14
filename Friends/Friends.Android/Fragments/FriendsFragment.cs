@@ -14,9 +14,10 @@ public class FriendsFragment : Fragment
     private RecyclerView friendsRecyclerView;
     private EditText searchEditText;
     private FriendsViewModel friendsViewModel;
+    private FriendGroupAdapter friendGroupAdapter;
 
     public override void OnCreate(Bundle savedInstanceState)
-     {
+    {
         base.OnCreate(savedInstanceState);
     }
 
@@ -36,20 +37,23 @@ public class FriendsFragment : Fragment
         searchEditText = view.FindViewById<EditText>(Resource.Id.search_text);
         searchEditText.TextChanged += (s, e) =>
         {
-            friendsViewModel.SearchText = ((EditText)s).Text;
+            friendsViewModel.SearchText = searchEditText.Text;
         };
-        PopulateView();
+
+        friendsRecyclerView.SetLayoutManager(new LinearLayoutManager(Context));
+        friendGroupAdapter = new FriendGroupAdapter(friendsViewModel.FriendGroupList, friendsViewModel.ChangeIsFriend);
+        friendsRecyclerView.SetAdapter(friendGroupAdapter);
     }
 
     private void FriendsViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
     {
-        PopulateView();
+        friendGroupAdapter.Update(friendsViewModel.FriendGroupList);
     }
 
-    private void PopulateView()
+    public override void OnResume()
     {
-        friendsRecyclerView.SetLayoutManager(new LinearLayoutManager(Context));
-        friendsRecyclerView.SetAdapter(new FriendGroupAdapter(friendsViewModel.FriendGroupList));
+        base.OnResume();
+        //friendGroupAdapter.Update(friendsViewModel.FriendGroupList);
     }
 }
 

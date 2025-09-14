@@ -2,12 +2,11 @@
 using Android.OS;
 using Android.Runtime;
 using AndroidX.AppCompat.App;
-using Android.Content.PM;
 
-namespace Friends.Android
+namespace Friends.Android.Activities
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    public class FriendsActivity : AppCompatActivity
     {
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -24,13 +23,6 @@ namespace Friends.Android
                     .Replace(Resource.Id.container, new FriendsFragment())
                     .Commit();
             }
-        }
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

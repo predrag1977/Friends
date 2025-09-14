@@ -38,6 +38,18 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
+    <!-- Friend/Unfriend Icon -->
+    <ImageView
+        android:id="@+id/friend_image_view"
+        android:src="@drawable/ic_friend"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginHorizontal="12dp"
+        android:tint="@android:color/black"
+        android:layout_gravity="center_vertical"
+        android:contentDescription=""/>
+
+
     <!-- Chevron -->
     <ImageView
         android:id="@+id/forward_image_view"

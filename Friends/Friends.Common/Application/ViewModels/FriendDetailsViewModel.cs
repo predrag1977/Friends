@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Friends.Common.Application.UsesCases;
 using Friends.Common.Domain.Models;
 
@@ -20,6 +21,11 @@ namespace Friends.Common.Application.ViewModels
 		{
             Friend = await _getFriendCacheUseCase.ExecuteAsync(id);
         }
-	}
+
+        public void ChangeIsFriend()
+        {
+            Friend.IsFriend = !Friend.IsFriend;
+        }
+    }
 }
 

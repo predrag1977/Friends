@@ -59,7 +59,6 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MainApplication.cs" />
@@ -67,6 +66,7 @@
     <Compile Include="Adapters\FriendAdapter.cs" />
     <Compile Include="Activities\FriendDetailsActivity.cs" />
     <Compile Include="Adapters\FriendGroupAdapter.cs" />
+    <Compile Include="Activities\FriendActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -143,6 +143,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\ic_chevron_left.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\ic_friend.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
