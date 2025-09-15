@@ -1,4 +1,4 @@
-package com.friends
+package com.friends.ui.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
