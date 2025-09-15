@@ -1,4 +1,4 @@
-package com.friends.ui.theme
+package com.friends.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
