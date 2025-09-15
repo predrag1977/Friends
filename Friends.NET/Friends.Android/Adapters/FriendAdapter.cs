@@ -1,11 +1,9 @@
 ﻿using Android.Content;
 using Android.Views;
-using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using Bumptech.Glide;
 using Friends.Android.Activities;
 using Friends.Common.Application.Models;
-using System.Collections.Generic;
 
 namespace Friends.Android.Adapters
 {

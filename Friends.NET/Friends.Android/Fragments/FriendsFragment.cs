@@ -1,6 +1,5 @@
 ﻿
 using System.ComponentModel;
-using Android.OS;
 using Android.Views;
 using AndroidX.RecyclerView.Widget;
 using Friends.Android;

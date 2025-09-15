@@ -5,7 +5,7 @@
     <OutputType>Exe</OutputType>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationId>com.companyname.Friends.Android</ApplicationId>
+    <ApplicationId>com.friends</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
   </PropertyGroup>
@@ -16,7 +16,8 @@
     <None Remove="Activities\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Glide" Version="4.16.0.14" />
     <PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.4.0.3" />
+    <PackageReference Include="Xamarin.Android.Glide" Version="4.16.0.14" />
+    <PackageReference Include="Xamarin.Google.Android.Material" Version="1.12.0.5" />
   </ItemGroup>
 </Project>
