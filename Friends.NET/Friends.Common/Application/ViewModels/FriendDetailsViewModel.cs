@@ -1,6 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using Friends.Common.Application.Models;
 using Friends.Common.Application.UsesCases;
-using Friends.Common.Domain.Models;
 
 namespace Friends.Common.Application.ViewModels
 {
@@ -8,18 +9,25 @@ namespace Friends.Common.Application.ViewModels
 	{
         private readonly GetFriendCacheUseCase _getFriendCacheUseCase;
 
-        [ObservableProperty]
-        public Friend? friend;
-
         public FriendDetailsViewModel(GetFriendCacheUseCase getFriendCacheUseCase)
 		{
             _getFriendCacheUseCase = getFriendCacheUseCase;
         }
 
+        [ObservableProperty]
+        public FriendUI friend;
+
         public async void LoadAsync(string id)
 		{
-            Friend = await _getFriendCacheUseCase.ExecuteAsync(id);
+            Friend = _getFriendCacheUseCase.Execute(id);
+            await Task.CompletedTask;
         }
-	}
+
+        public void ChangeIsFriend()
+        {
+            Friend.IsFriend = !Friend.IsFriend;
+            OnPropertyChanged();
+        }
+    }
 }
 

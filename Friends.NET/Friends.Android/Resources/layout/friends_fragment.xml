@@ -9,17 +9,19 @@
     <!-- Title -->
     <TextView
         android:id="@+id/title"
-        android:text="FRIENDS"
+        android:text="@string/friends"
         android:textStyle="bold"
         android:textSize="18sp"
         android:gravity="center"
         android:paddingTop="14dp"
+        android:textAllCaps="true"
         android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <!-- Search bar -->
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="12dp"
@@ -32,12 +34,16 @@
             android:src="@android:drawable/ic_menu_search"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:tint="@android:color/darker_gray"/>
+            android:tint="@android:color/darker_gray"
+            android:contentDescription=""/>
 
-        <TextView
-            android:id="@+id/searchHint"
-            android:text="Search by name, email or username"
-            android:textColor="@android:color/darker_gray"
+        <EditText
+            android:id="@+id/search_text"
+            android:textColorHint="#A0A0A0"
+            android:textSize="13dp"
+            android:hint="@string/search_hint"
+            android:background="@android:color/transparent"
+            android:textColor="#A0A0A0"
             android:layout_marginStart="8dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

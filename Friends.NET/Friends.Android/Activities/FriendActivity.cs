@@ -1,9 +1,7 @@
-﻿
-
-namespace Friends.Android;
+﻿namespace Friends.Android;
 
 [Activity(Label = "@string/app_name", MainLauncher = true)]
-public class MainActivity : Activity
+public class FriendActivity : Activity
 {
     protected override void OnCreate(Bundle savedInstanceState)
     {

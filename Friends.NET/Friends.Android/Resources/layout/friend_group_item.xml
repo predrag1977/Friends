@@ -7,6 +7,9 @@
     <TextView
         android:id="@+id/header_text"
         android:text="@string/friends"
+        android:textSize="15sp"
+        android:textFontWeight="700"
+        android:textColor="#A0A0A0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

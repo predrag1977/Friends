@@ -1,16 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.Views;
+using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using Friends.Common.Application.Models;
+using Friends.Common.Domain.Models;
 
 namespace Friends.Android.Adapters
 {
 	public class FriendGroupAdapter : RecyclerView.Adapter
 	{
-        private readonly List<FriendGroup> friendGroupList;
+        private List<FriendGroup> friendGroupList;
 
         public FriendGroupAdapter(List<FriendGroup> friendGroupList)
-		{
+        {
             this.friendGroupList = friendGroupList;
         }
 
@@ -18,11 +21,11 @@ namespace Friends.Android.Adapters
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            var viewHolder = new FriendGroupViewHolder(holder.ItemView);
+            var viewHolder = holder as FriendGroupViewHolder;
             var context = viewHolder.ItemView.Context;
             var friendGroup = friendGroupList[position];
 
-            var headerStringResource = friendGroup.IsFriend ? Resource.String.recently_played : Resource.String.friends;
+            var headerStringResource = friendGroup.IsFriend ? Resource.String.friends : Resource.String.recently_played;
             viewHolder.HeaderTextView.Text = context.GetString(headerStringResource);
 
             viewHolder.FriendRecyclerView.SetLayoutManager(new LinearLayoutManager(context));
@@ -34,12 +37,18 @@ namespace Friends.Android.Adapters
             var itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.friend_group_item, parent, false);
             return new FriendGroupViewHolder(itemView);
         }
+
+        internal void Update(List<FriendGroup> friendGroupList)
+        {
+            this.friendGroupList = friendGroupList;
+            NotifyDataSetChanged();
+        }
     }
 
     internal class FriendGroupViewHolder : RecyclerView.ViewHolder
     {
-        public TextView HeaderTextView { get; set; }
-        public RecyclerView FriendRecyclerView { get; set; }
+        public TextView HeaderTextView { get; }
+        public RecyclerView FriendRecyclerView { get; }
 
         public FriendGroupViewHolder(View itemView) : base(itemView)
         {

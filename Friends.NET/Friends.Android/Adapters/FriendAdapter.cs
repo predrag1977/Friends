@@ -4,23 +4,21 @@ using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using Bumptech.Glide;
 using Friends.Android.Activities;
-using Friends.Common.Domain.Models;
+using Friends.Common.Application.Models;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Friends.Android.Adapters
 {
     public class FriendAdapter : RecyclerView.Adapter
     {
-        private readonly List<Friend> friendList;
+        private readonly List<FriendUI> friendList;
 
-        public FriendAdapter(List<Friend> friendList)
+        public FriendAdapter(List<FriendUI> friendList)
         {
             this.friendList = friendList;
         }
 
         public override int ItemCount => friendList?.Count ?? 0;
-
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
@@ -30,7 +28,7 @@ namespace Friends.Android.Adapters
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            var viewHolder = new FriendViewHolder(holder.ItemView);
+            var viewHolder = holder as FriendViewHolder;
             var context = viewHolder.ItemView.Context;
             var friend = friendList[position];
 
@@ -38,11 +36,15 @@ namespace Friends.Android.Adapters
                  .Load(friend.ProfilePictureUrl)
                  .CircleCrop()
                  .Into(viewHolder.PhotoImageView);
-
+            viewHolder.FriendImageView.Alpha = friend.IsFriend ? 1f : 0.2f;
+            viewHolder.FriendImageView.Click += (s, e) =>
+            {
+                friend.IsFriend = !friend.IsFriend;
+            };
             viewHolder.FriendNameTextView.Text = friend.FullName;
             viewHolder.NickNameTextView.Text = friend.NickName;
             viewHolder.ItemView.Click += (s, e) => {
-                var intent = new Intent(viewHolder.ItemView.Context, typeof(FriendDetailsActivity));
+                var intent = new Intent(context, typeof(FriendDetailsActivity));
                 intent.PutExtra("friend_id", friend.Id);
                 context.StartActivity(intent);
             };
@@ -54,12 +56,14 @@ namespace Friends.Android.Adapters
         public ImageView PhotoImageView { get; set; }
         public TextView FriendNameTextView { get; set; }
         public TextView NickNameTextView { get; set; }
+        public ImageView FriendImageView { get; set; }
 
         public FriendViewHolder(View itemView) : base(itemView)
         {
             PhotoImageView = itemView.FindViewById<ImageView>(Resource.Id.photo);
             FriendNameTextView = itemView.FindViewById<TextView>(Resource.Id.fullName);
             NickNameTextView = itemView.FindViewById<TextView>(Resource.Id.nickName);
+            FriendImageView = itemView.FindViewById<ImageView>(Resource.Id.friend_image_view);
         }
     }
 }
