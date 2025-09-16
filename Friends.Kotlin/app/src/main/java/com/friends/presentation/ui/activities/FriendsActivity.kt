@@ -16,9 +16,7 @@ class FriendsActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FriendsTheme {
-                FriendsNavigationHost(
-                    rememberNavController()
-                )
+                FriendsNavigationHost()
             }
         }
     }

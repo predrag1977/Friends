@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kapt)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -31,10 +33,12 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+
     }
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         compose = true
     }
@@ -51,11 +55,22 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.hilt.android)
 
+    // Moshi Dependencies
+    implementation(libs.moshi.core)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.moshi)
+    ksp(libs.moshi.kotlin.codegen)
+
+
     // Hilt Dependencies
     implementation(libs.hilt.android)
     implementation(libs.androidx.material3)
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    // Retrofit for Networking
+    implementation(libs.retrofit.core)
+    implementation(libs.okhttp.loggingInterceptor)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
