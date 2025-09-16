@@ -1,6 +1,6 @@
 package com.friends.di
 
-import com.friends.domain.interfaces.IFriendRepository
+import com.friends.domain.interfaces.IFriendsApi
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -56,6 +56,7 @@ object FriendDIModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): IApiService {
+    fun provideApiService(retrofit: Retrofit): IFriendsApi {
+        return retrofit.create(IFriendsApi::class.java)
     }
 }
