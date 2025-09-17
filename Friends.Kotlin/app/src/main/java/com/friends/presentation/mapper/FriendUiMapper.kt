@@ -1,6 +1,5 @@
 package com.friends.presentation.mapper
 
-import com.friends.data.models.FriendResponse
 import com.friends.domain.models.Friend
 import com.friends.presentation.models.FriendUi
 import java.time.LocalDateTime
@@ -16,4 +15,8 @@ fun Friend.toUi(): FriendUi {
         age = ChronoUnit.YEARS.between(dateOfBirth, LocalDateTime.now()).toString(),
         fullName = "$firstName $lastName"
     )
+}
+
+fun List<Friend>.toFriendUiList(): List<FriendUi> {
+    return this.map { it.toUi() }
 }
