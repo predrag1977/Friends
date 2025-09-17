@@ -1,17 +1,20 @@
 ﻿<resources>
-
-    <!-- Base app theme -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Primary colors -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-
-        <!-- Status/Navigation bar -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+
+        <!-- Light status bar icons (dark text on light background) -->
         <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Layout in full screen with safe inset handling -->
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
+    <style name="FriendDetailsActivityTheme" parent="AppTheme">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/colorSecondary</item>
+    </style>
 </resources>
 

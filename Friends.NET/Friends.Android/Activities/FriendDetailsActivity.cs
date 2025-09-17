@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Friends.Android.Activities
 {
-	[Activity (Label = "@string/friend_details")]			
+	[Activity (Label = "@string/friend_details", Theme = "@style/FriendDetailsActivityTheme")]			
 	public class FriendDetailsActivity : Activity
     {
         private FriendDetailsViewModel friendDetailsViewModel;
