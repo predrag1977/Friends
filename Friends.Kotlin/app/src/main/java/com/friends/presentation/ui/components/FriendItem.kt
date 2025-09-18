@@ -8,4 +8,7 @@ import com.friends.presentation.models.FriendUi
 fun FriendItem(friend: FriendUi) {
     Text(text = friend.fullName)
     Text(text = friend.age)
+    Text(text = if (friend.isFriend) "Friend" else "Recently Played")
+    Text(text = friend.nickName)
+
 }

@@ -6,8 +6,9 @@ data class FriendUi(
     val id: String,
     val firstName: String,
     val lastName: String,
-    val birthDate: LocalDate,
+    val isFriend: Boolean,
     val nickName: String,
+    val birthDate: LocalDate,
     val age: String,
     val fullName: String
 )

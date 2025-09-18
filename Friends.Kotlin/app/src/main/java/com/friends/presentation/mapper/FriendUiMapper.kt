@@ -15,6 +15,7 @@ fun Friend.toUi(): FriendUi {
         id = id,
         firstName = firstName,
         lastName = lastName,
+        isFriend = isFriend,
         birthDate = birthDate,
         nickName = nickName,
         age = currentAge,

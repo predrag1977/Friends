@@ -1,5 +1,6 @@
 package com.friends.presentation.viewmodels
 
+import androidx.compose.ui.tooling.data.Group
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.friends.presentation.models.FriendUi
@@ -18,6 +19,9 @@ class FriendsViewModel @Inject constructor(
     private val _friends = MutableStateFlow<List<FriendUi>>(emptyList())
     val friends: StateFlow<List<FriendUi>> = _friends
 
+    private val _friendGroups = MutableStateFlow<Map<Boolean,List<FriendUi>>>(emptyMap())
+    val friendGroups : StateFlow<Map<Boolean,List<FriendUi>>> = _friendGroups
+
     init {
         loadData()
     }
@@ -26,6 +30,7 @@ class FriendsViewModel @Inject constructor(
         viewModelScope.launch {
             val friendList = getFriendUseCase.executeAsync()
             _friends.update { friendList }
+            _friendGroups.update { friendList.groupBy { it.isFriend } }
         }
     }
 }
