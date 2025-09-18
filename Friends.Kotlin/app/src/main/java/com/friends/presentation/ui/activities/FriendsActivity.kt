@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.navigation.compose.rememberNavController
 import com.friends.presentation.ui.navigationhost.FriendsNavigationHost
 import com.friends.presentation.ui.theme.FriendsTheme
 import dagger.hilt.android.AndroidEntryPoint

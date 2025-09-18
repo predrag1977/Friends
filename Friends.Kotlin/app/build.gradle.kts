@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kapt)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.ksp)
 }
@@ -61,11 +60,10 @@ dependencies {
     implementation(libs.converter.moshi)
     ksp(libs.moshi.kotlin.codegen)
 
-
     // Hilt Dependencies
     implementation(libs.hilt.android)
     implementation(libs.androidx.material3)
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
 
     // Retrofit for Networking

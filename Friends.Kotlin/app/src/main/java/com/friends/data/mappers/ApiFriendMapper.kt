@@ -11,7 +11,7 @@ fun ApiFriend.toDomain(): Friend {
         id = UUID.randomUUID().toString(),
         firstName = firstName,
         lastName = lastName,
-        dateOfBirth = LocalDateTime.parse(dateOfBirth),
+        dateOfBirth = dateOfBirth,
         nickName = nickName
     )
 }

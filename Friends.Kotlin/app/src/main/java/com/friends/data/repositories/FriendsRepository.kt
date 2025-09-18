@@ -10,6 +10,7 @@ class FriendsRepository @Inject constructor(
     private val friendsApi: IFriendsApi
 ) : IFriendsRepository {
     override suspend fun getFriendsAsync(): List<Friend> {
+        var t  = friendsApi.getFriendsResponse().friends
         return friendsApi.getFriendsResponse().friends.toFriendList()
     }
 }

@@ -1,7 +1,11 @@
 package com.friends.di
 
+import com.friends.data.repositories.FriendsRepository
 import com.friends.domain.interfaces.IFriendsApi
+import com.friends.domain.interfaces.IFriendsRepository
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,6 +14,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.time.Instant
 import javax.inject.Singleton
 
 @Module
@@ -38,7 +43,9 @@ object FriendDIModule {
     @Provides
     @Singleton
     fun provideMoshi(): Moshi {
-        return Moshi.Builder().build()
+        return Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
+            .build()
     }
 
     @Provides
@@ -58,5 +65,13 @@ object FriendDIModule {
     @Singleton
     fun provideApiService(retrofit: Retrofit): IFriendsApi {
         return retrofit.create(IFriendsApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFriendsRepository(
+        friendsRepository: FriendsRepository
+    ): IFriendsRepository {
+        return friendsRepository
     }
 }
