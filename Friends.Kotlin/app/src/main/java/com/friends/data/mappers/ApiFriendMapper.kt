@@ -2,9 +2,7 @@ package com.friends.data.mappers
 
 import com.friends.data.models.ApiFriend
 import com.friends.domain.models.Friend
-import java.time.LocalDateTime
 import java.util.UUID
-
 
 fun ApiFriend.toDomain(): Friend {
     return Friend(

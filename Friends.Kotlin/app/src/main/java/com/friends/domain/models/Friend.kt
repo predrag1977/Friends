@@ -1,6 +1,6 @@
 package com.friends.domain.models
 
-import java.time.LocalDateTime
+import java.time.Instant
 
 data class Friend (
     val id: String,

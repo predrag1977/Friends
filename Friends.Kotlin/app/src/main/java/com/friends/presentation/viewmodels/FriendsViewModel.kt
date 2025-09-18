@@ -25,7 +25,7 @@ class FriendsViewModel @Inject constructor(
     private fun loadData() {
         viewModelScope.launch {
             val friendList = getFriendUseCase.executeAsync()
-            _friends.update{friendList}
+            _friends.update { friendList }
         }
     }
 }

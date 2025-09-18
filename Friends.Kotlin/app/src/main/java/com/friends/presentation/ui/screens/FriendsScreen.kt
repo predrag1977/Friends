@@ -12,6 +12,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.friends.presentation.models.FriendUi
+import com.friends.presentation.ui.components.FriendItem
 import com.friends.presentation.viewmodels.FriendsViewModel
 
 @Composable
@@ -26,17 +27,12 @@ fun FriendsScreen(
         floatingActionButton = { },
         content = { paddingValues ->
             Column(modifier = Modifier.padding(paddingValues)) {
-//                LazyColumn {
-//                    items(friends, key = { it.id }, itemContent = { friend ->
-//                        FriendItem(friend = friend)
-//                    })
-//                }
+                LazyColumn {
+                    items(friends, key = { it.id }, itemContent = { friend ->
+                        FriendItem(friend = friend)
+                    })
+                }
             }
         }
     )
-}
-
-@Composable
-fun FriendItem(friend: FriendUi) {
-    Text(text = friend.fullName)
 }

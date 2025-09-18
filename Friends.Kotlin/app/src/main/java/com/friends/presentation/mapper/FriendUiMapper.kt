@@ -2,17 +2,22 @@ package com.friends.presentation.mapper
 
 import com.friends.domain.models.Friend
 import com.friends.presentation.models.FriendUi
-import java.time.LocalDateTime
-import java.time.temporal.ChronoUnit
+import java.time.Instant
+import java.time.LocalDate
+import java.time.Period
+import java.time.ZoneId
 
 fun Friend.toUi(): FriendUi {
+    val birthDate = Instant.parse(dateOfBirth).atZone(ZoneId.systemDefault()).toLocalDate()
+    val currentAge = Period.between(birthDate, LocalDate.now()).years.toString()
+
     return FriendUi(
         id = id,
         firstName = firstName,
         lastName = lastName,
-        dateOfBirth = dateOfBirth,
+        birthDate = birthDate,
         nickName = nickName,
-        age = ChronoUnit.YEARS.between(dateOfBirth, LocalDateTime.now()).toString(),
+        age = currentAge,
         fullName = "$firstName $lastName"
     )
 }
