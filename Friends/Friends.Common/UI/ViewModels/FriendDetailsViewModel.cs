@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
-using Friends.Common.Application.Models;
+using Friends.Common.UI.Models;
 using Friends.Common.Application.UsesCases;
 
-namespace Friends.Common.Application.ViewModels
+namespace Friends.Common.UI.ViewModels
 {
 	public partial class FriendDetailsViewModel : ObservableObject
 	{

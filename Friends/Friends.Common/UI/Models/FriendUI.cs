@@ -1,7 +1,7 @@
 ﻿using System;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Friends.Common.Application.Models
+namespace Friends.Common.UI.Models
 {
 	public partial class FriendUI : ObservableObject
 	{

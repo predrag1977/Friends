@@ -2,10 +2,10 @@
 using System.Net.Http;
 using AutoMapper;
 using Friends.Common.Application.Interfaces;
-using Friends.Common.Application.Mappings;
+using Friends.Common.UI.Mappings;
 using Friends.Common.Application.Stores;
 using Friends.Common.Application.UsesCases;
-using Friends.Common.Application.ViewModels;
+using Friends.Common.UI.ViewModels;
 using Friends.Common.Data.Mappings;
 using Friends.Common.Data.Repositories;
 using Friends.Common.Domain.Interfaces;

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
-using Friends.Common.Application.Models;
+using Friends.Common.UI.Models;
 using Friends.Common.Application.UsesCases;
 
-namespace Friends.Common.Application.ViewModels
+namespace Friends.Common.UI.ViewModels
 {
     public partial class FriendsViewModel : ObservableObject
     {

@@ -3,8 +3,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Friends.Common.Application.Interfaces;
-using Friends.Common.Application.Models;
 using Friends.Common.Domain.Interfaces;
+using Friends.Common.UI.Models;
 
 namespace Friends.Common.Application.UsesCases
 {

@@ -5,8 +5,8 @@ using Android.OS;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using Bumptech.Glide;
-using Friends.Common.Application.Models;
-using Friends.Common.Application.ViewModels;
+using Friends.Common.UI.Models;
+using Friends.Common.UI.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Friends.Android.Activities

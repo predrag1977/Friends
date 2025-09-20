@@ -1,7 +1,6 @@
-﻿using Friends.Common.Domain.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Friends.Common.Application.Models
+namespace Friends.Common.UI.Models
 {
     public class FriendGroup
     {

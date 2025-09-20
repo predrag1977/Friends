@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Friends.Common.Application.Interfaces;
-using Friends.Common.Application.Models;
+using Friends.Common.UI.Models;
 
 namespace Friends.Common.Application.Stores
 {

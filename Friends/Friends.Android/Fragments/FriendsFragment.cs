@@ -6,7 +6,7 @@ using AndroidX.Fragment.App;
 using AndroidX.RecyclerView.Widget;
 using Friends.Android;
 using Friends.Android.Adapters;
-using Friends.Common.Application.ViewModels;
+using Friends.Common.UI.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 
 public class FriendsFragment : Fragment

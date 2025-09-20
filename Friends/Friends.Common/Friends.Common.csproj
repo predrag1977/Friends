@@ -14,14 +14,15 @@
     <None Remove="Domain\Interfaces\" />
     <None Remove="Data\Repositories\" />
     <None Remove="Domain\Responses\" />
-    <None Remove="Application\ViewModels\" />
     <None Remove="Application\UsesCases\" />
-    <None Remove="Application\Models\" />
     <None Remove="Data\Models\" />
     <None Remove="Data\Mappings\" />
-    <None Remove="Application\Mappings\" />
     <None Remove="Application\Stores\" />
     <None Remove="Application\Interfaces\" />
+    <None Remove="UI\" />
+    <None Remove="UI\ViewModels\" />
+    <None Remove="UI\Models\" />
+    <None Remove="UI\Mappings\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DI\" />
@@ -32,14 +33,15 @@
     <Folder Include="Domain\Interfaces\" />
     <Folder Include="Data\Repositories\" />
     <Folder Include="Domain\Responses\" />
-    <Folder Include="Application\ViewModels\" />
     <Folder Include="Application\UsesCases\" />
-    <Folder Include="Application\Models\" />
     <Folder Include="Data\Models\" />
     <Folder Include="Data\Mappings\" />
-    <Folder Include="Application\Mappings\" />
     <Folder Include="Application\Stores\" />
     <Folder Include="Application\Interfaces\" />
+    <Folder Include="UI\" />
+    <Folder Include="UI\ViewModels\" />
+    <Folder Include="UI\Models\" />
+    <Folder Include="UI\Mappings\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />

@@ -4,7 +4,7 @@ using Android.Widget;
 using AndroidX.RecyclerView.Widget;
 using Bumptech.Glide;
 using Friends.Android.Activities;
-using Friends.Common.Application.Models;
+using Friends.Common.UI.Models;
 using System.Collections.Generic;
 
 namespace Friends.Android.Adapters

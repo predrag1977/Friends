@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Friends.Common.Application.Models;
+using Friends.Common.UI.Models;
 
 namespace Friends.Common.Application.Interfaces
 {

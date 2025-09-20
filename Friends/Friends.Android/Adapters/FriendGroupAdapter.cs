@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
-using Friends.Common.Application.Models;
-using Friends.Common.Domain.Models;
+using Friends.Common.UI.Models;
 
 namespace Friends.Android.Adapters
 {
