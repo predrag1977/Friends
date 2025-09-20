@@ -8,7 +8,6 @@ namespace Friends.Android.Activities
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class FriendsActivity : AppCompatActivity
     {
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
