@@ -3,6 +3,7 @@ package com.friends.presentation.usecases
 import com.friends.domain.interfaces.IFriendsRepository
 import com.friends.presentation.mapper.toFriendUiList
 import com.friends.presentation.models.FriendUi
+import com.friends.presentation.ui.states.FriendStates
 import javax.inject.Inject
 
 
@@ -11,6 +12,8 @@ class GetFriendUseCase @Inject constructor(
 ){
     suspend fun executeAsync(): List<FriendUi> {
         val friendList = friendsRepository.getFriendsAsync()
-        return friendList.toFriendUiList()
+        val friendUiList = friendList.toFriendUiList()
+        FriendStates.friends = friendUiList
+        return friendUiList
     }
 }

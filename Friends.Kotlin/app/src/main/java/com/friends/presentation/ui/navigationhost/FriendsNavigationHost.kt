@@ -1,12 +1,15 @@
 package com.friends.presentation.ui.navigationhost
 
-import android.content.Context
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.friends.presentation.ui.navigationhost.Arguments.FRIEND_ID
+import com.friends.presentation.ui.navigationhost.Routes.FRIENDS_DETAILS_ROUTE
+import com.friends.presentation.ui.navigationhost.Routes.FRIENDS_ROUTE
 import com.friends.presentation.ui.screens.FriendDetailsScreen
 import com.friends.presentation.ui.screens.FriendsScreen
 
@@ -14,15 +17,30 @@ import com.friends.presentation.ui.screens.FriendsScreen
 @Composable
 fun FriendsNavigationHost(
     navController: NavHostController = rememberNavController(),
-    startDestination: String = Routes.FRIENDS_ROUTE,
-    context : Context = LocalContext.current
+    startDestination: String = FRIENDS_ROUTE
 ){
     NavHost(navController, startDestination) {
-        composable(Routes.FRIENDS_ROUTE) {
-            FriendsScreen()
+        composable(FRIENDS_ROUTE) {
+            FriendsScreen(
+                onFriendItemClick = { friendId->
+                    navController.navigate("$FRIENDS_DETAILS_ROUTE/${friendId}")
+                }
+            )
         }
-        composable(Routes.FRIENDS_DETAILS_ROUTE) {
-            FriendDetailsScreen()
+        composable("$FRIENDS_DETAILS_ROUTE/{$FRIEND_ID}",
+            arguments = listOf(
+                navArgument(FRIEND_ID) { type = NavType.StringType }
+            )
+        ) { entry ->
+            val friendId = entry.arguments?.getString(FRIEND_ID)
+            FriendDetailsScreen(
+                friendId = friendId,
+                onBackClick = {
+                    if(navController.previousBackStackEntry != null) {
+                        navController.navigateUp()
+                    }
+                }
+            )
         }
     }
 }

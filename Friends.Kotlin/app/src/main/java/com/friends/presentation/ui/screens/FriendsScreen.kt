@@ -21,7 +21,8 @@ import com.friends.presentation.viewmodels.FriendsViewModel
 
 @Composable
 fun FriendsScreen(
-    viewModel: FriendsViewModel = hiltViewModel()
+    viewModel: FriendsViewModel = hiltViewModel(),
+    onFriendItemClick: (friendID: String) -> Unit
 ) {
     val friendGroups by viewModel.friendGroups.collectAsState()
 
@@ -49,7 +50,10 @@ fun FriendsScreen(
                             )
                         }
                         items(friends) { friend ->
-                            FriendItem(friend)
+                            FriendItem(
+                                friend,
+                                onFriendItemClick
+                            )
                         }
                     }
                 }

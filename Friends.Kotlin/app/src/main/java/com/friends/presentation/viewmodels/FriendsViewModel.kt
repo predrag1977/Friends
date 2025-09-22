@@ -1,6 +1,5 @@
 package com.friends.presentation.viewmodels
 
-import androidx.compose.ui.tooling.data.Group
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.friends.presentation.models.FriendUi
