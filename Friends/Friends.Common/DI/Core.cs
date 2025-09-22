@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Net.Http;
 using AutoMapper;
-using Friends.Common.Application.Interfaces;
 using Friends.Common.UI.Mappings;
-using Friends.Common.Application.Stores;
 using Friends.Common.Application.UsesCases;
 using Friends.Common.UI.ViewModels;
 using Friends.Common.Data.Mappings;
 using Friends.Common.Data.Repositories;
 using Friends.Common.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using Friends.Common.UI.Services;
+using Friends.Common.UI.Interfaces;
 
 namespace Friends.Common.DI
 {
@@ -27,15 +27,19 @@ namespace Friends.Common.DI
                 Timeout = TimeSpan.FromSeconds(15)
             });
 
-            services.AddAutoMapper(typeof(ApiToDomainProfile));
-            services.AddAutoMapper(typeof(DomainToUIProfile));
+            services.AddAutoMapper(
+                typeof(ApiToDomainProfile),
+                typeof(DomainToUIProfile)
+            );
 
-            services.AddSingleton<IFriendCache, FriendCache>();
+            services.AddSingleton<IFriendCacheRepository, FriendCacheRepository>();
             services.AddSingleton<IFriendRepository, FriendRepository>();
             services.AddSingleton<IFriendDetailsRepository, FriendDetailsRepository>();
 
             services.AddSingleton<GetFriendUseCase>();
             services.AddSingleton<GetFriendCacheUseCase>();
+            
+            services.AddSingleton<IFriendUIStateService, FriendUIStateService>();
 
             services.AddTransient<FriendsViewModel>();
             services.AddTransient<FriendDetailsViewModel>();

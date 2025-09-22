@@ -39,19 +39,19 @@ namespace Friends.Common.Data.Repositories
             }
         }
 
-        public async Task<bool> PostFriendsAsync(Friend friend, CancellationToken ct = default)
-        {
-            try
-            {
-                var friendResponse = await _httpClient.PostAsJsonAsync("golf/friends.json", friend, ct);
-                return friendResponse.IsSuccessStatusCode;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                return false;
-            }
-        }
+        //public async Task<bool> PostFriendsAsync(Friend friend, CancellationToken ct = default)
+        //{
+        //    try
+        //    {
+        //        var friendResponse = await _httpClient.PostAsJsonAsync("golf/friends.json", friend, ct);
+        //        return friendResponse.IsSuccessStatusCode;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex);
+        //        return false;
+        //    }
+        //}
     }
 }
 

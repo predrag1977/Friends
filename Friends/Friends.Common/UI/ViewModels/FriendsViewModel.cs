@@ -5,45 +5,41 @@ using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using Friends.Common.UI.Models;
 using Friends.Common.Application.UsesCases;
+using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using Friends.Common.UI.Interfaces;
+using Friends.Common.UI.Services;
 
 namespace Friends.Common.UI.ViewModels
 {
     public partial class FriendsViewModel : ObservableObject
     {
         private readonly GetFriendUseCase _getFriendsUseCase;
-
-        private List<FriendUI> _allFriendList = new List<FriendUI>();
-
-        [ObservableProperty]
-        public List<FriendGroup> friendGroupList = new List<FriendGroup>();
+        private readonly IFriendUIStateService _friendUIStateService;
 
         [ObservableProperty]
-        public string searchText = "";
+        private List<FriendGroup> friendGroupList = new List<FriendGroup>();
 
-        public FriendsViewModel(GetFriendUseCase getFriendsUseCase)
+        [ObservableProperty]
+        private string searchText = "";
+
+        public FriendsViewModel(GetFriendUseCase getFriendsUseCase, IFriendUIStateService friendUIStateService)
         {
             _getFriendsUseCase = getFriendsUseCase;
+            _friendUIStateService = friendUIStateService;
 
-            LoadFriendsAsync();
+            _ = LoadFriendsAsync();
         }
 
-        private async void LoadFriendsAsync()
+        private async Task LoadFriendsAsync()
         {
-            _allFriendList = await _getFriendsUseCase.ExecuteAsync();
-            _allFriendList.ForEach(friendUI =>
+            _friendUIStateService.AllFriends = await _getFriendsUseCase.ExecuteAsync();
+            _friendUIStateService.AllFriends.ForEach(friendUI =>
             {
                 friendUI.PropertyChanged -= FriendUI_PropertyChanged;
                 friendUI.PropertyChanged += FriendUI_PropertyChanged;
             });
-            SetFriendGroupList(_allFriendList, SearchText);
-        }
-
-        private void FriendUI_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if(e.PropertyName == nameof(FriendUI.IsFriend))
-            {
-                SetFriendGroupList(_allFriendList, SearchText);
-            }
+            SetFriendGroupList(_friendUIStateService.AllFriends, SearchText);
         }
 
         private void SetFriendGroupList(List<FriendUI> allFriendList, string searchText)
@@ -54,20 +50,25 @@ namespace Friends.Common.UI.ViewModels
                 x.NickName.StartsWith(searchText, StringComparison.OrdinalIgnoreCase)).ToList();
 
             FriendGroupList = filteredList
-                .OrderBy(x=>x.FullName)
+                .OrderBy(x => x.FullName)
                 .GroupBy(x => x.IsFriend)
                 .Select(group => new FriendGroup()
                 {
                     IsFriend = group.Key,
                     Items = group.ToList()
                 })
-                .OrderBy(x=>x.IsFriend)
+                .OrderBy(x => x.IsFriend)
                 .ToList();
+        }
+
+        private void FriendUI_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            SetFriendGroupList(_friendUIStateService.AllFriends, SearchText);
         }
 
         partial void OnSearchTextChanged(string value)
         {
-            SetFriendGroupList(_allFriendList, value);
+            SetFriendGroupList(_friendUIStateService.AllFriends, value);
         }
     }
 }
