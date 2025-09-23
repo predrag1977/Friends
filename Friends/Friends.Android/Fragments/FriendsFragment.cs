@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Threading.Tasks;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
