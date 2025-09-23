@@ -58,4 +58,3 @@ public class FriendsFragment : Fragment
         friendGroupAdapter.Update(friendsViewModel.FriendGroupList);
     }
 }
-

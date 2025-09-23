@@ -13,7 +13,6 @@
     <None Remove="Application\" />
     <None Remove="Domain\Interfaces\" />
     <None Remove="Data\Repositories\" />
-    <None Remove="Domain\Responses\" />
     <None Remove="Application\UsesCases\" />
     <None Remove="Data\Models\" />
     <None Remove="Data\Mappings\" />
@@ -23,6 +22,7 @@
     <None Remove="UI\Mappings\" />
     <None Remove="UI\Services\" />
     <None Remove="UI\Interfaces\" />
+    <None Remove="Data\Responses\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DI\" />
@@ -32,7 +32,6 @@
     <Folder Include="Application\" />
     <Folder Include="Domain\Interfaces\" />
     <Folder Include="Data\Repositories\" />
-    <Folder Include="Domain\Responses\" />
     <Folder Include="Application\UsesCases\" />
     <Folder Include="Data\Models\" />
     <Folder Include="Data\Mappings\" />
@@ -42,6 +41,7 @@
     <Folder Include="UI\Mappings\" />
     <Folder Include="UI\Services\" />
     <Folder Include="UI\Interfaces\" />
+    <Folder Include="Data\Responses\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />

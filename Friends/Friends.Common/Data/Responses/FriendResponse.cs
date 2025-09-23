@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Friends.Common.Data.Models;
 
-namespace Friends.Common.Domain.Responses
+namespace Friends.Common.Data.Responses
 {
 	public class FriendResponse
 	{

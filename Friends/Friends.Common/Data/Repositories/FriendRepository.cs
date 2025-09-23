@@ -6,9 +6,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Friends.Common.Data.Models;
+using Friends.Common.Data.Responses;
 using Friends.Common.Domain.Interfaces;
 using Friends.Common.Domain.Models;
-using Friends.Common.Domain.Responses;
 
 namespace Friends.Common.Data.Repositories
 {
