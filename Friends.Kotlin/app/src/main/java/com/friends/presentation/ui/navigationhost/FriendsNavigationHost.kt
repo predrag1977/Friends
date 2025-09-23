@@ -31,10 +31,8 @@ fun FriendsNavigationHost(
             arguments = listOf(
                 navArgument(FRIEND_ID) { type = NavType.StringType }
             )
-        ) { entry ->
-            val friendId = entry.arguments?.getString(FRIEND_ID)
+        ) {
             FriendDetailsScreen(
-                friendId = friendId,
                 onBackClick = {
                     if(navController.previousBackStackEntry != null) {
                         navController.navigateUp()

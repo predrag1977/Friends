@@ -14,7 +14,6 @@ import com.friends.presentation.viewmodels.FriendDetailsViewModel
 @Composable
 fun FriendDetailsScreen(
     onBackClick: () -> Unit,
-    friendId: String?,
     viewModel: FriendDetailsViewModel = hiltViewModel()
 ) {
     val friend by viewModel.friend.collectAsState()
