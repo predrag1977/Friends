@@ -6,9 +6,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using Friends.Common.UI.Models;
 using Friends.Common.Application.UsesCases;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
 using Friends.Common.UI.Interfaces;
-using Friends.Common.UI.Services;
 
 namespace Friends.Common.UI.ViewModels
 {
