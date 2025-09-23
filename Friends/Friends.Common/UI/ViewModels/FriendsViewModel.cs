@@ -31,7 +31,7 @@ namespace Friends.Common.UI.ViewModels
             _ = LoadFriendsAsync();
         }
 
-        private async Task LoadFriendsAsync()
+        public async Task LoadFriendsAsync()
         {
             _friendUIStateService.AllFriends = await _getFriendsUseCase.ExecuteAsync();
             _friendUIStateService.AllFriends.ForEach(friendUI =>
