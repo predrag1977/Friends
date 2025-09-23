@@ -10,5 +10,6 @@ data class FriendUi(
     val nickName: String,
     val birthDate: LocalDate,
     val age: String,
-    val fullName: String
+    val fullName: String,
+    val profilePictureUrl: String
 )

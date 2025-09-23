@@ -32,4 +32,13 @@ class FriendsViewModel @Inject constructor(
             _friendGroups.update { friendList.groupBy { it.isFriend } }
         }
     }
+
+    fun searchFriends(text: String) {
+        val filteredFriends = _friends.value.filter {
+            it.fullName.contains(text, ignoreCase = true)
+        }
+        _friendGroups.update {
+            filteredFriends.groupBy { it.isFriend }
+        }
+    }
 }

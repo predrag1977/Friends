@@ -19,7 +19,8 @@ fun Friend.toUi(): FriendUi {
         birthDate = birthDate,
         nickName = nickName,
         age = currentAge,
-        fullName = "$firstName $lastName"
+        fullName = "$firstName $lastName",
+        profilePictureUrl = profilePictureUrl
     )
 }
 

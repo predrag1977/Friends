@@ -8,5 +8,6 @@ data class ApiFriend(
     val lastName: String,
     val isFriend: Boolean,
     val dateOfBirth: String,
-    val nickName: String
+    val nickName: String,
+    val profilePictureUrl: String
 )

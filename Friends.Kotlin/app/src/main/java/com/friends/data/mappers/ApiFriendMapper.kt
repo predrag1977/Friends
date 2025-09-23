@@ -3,7 +3,6 @@ package com.friends.data.mappers
 import com.friends.data.models.ApiFriend
 import com.friends.domain.models.Friend
 import java.util.UUID
-import kotlin.Boolean
 
 fun ApiFriend.toDomain(): Friend {
     return Friend(
@@ -12,7 +11,8 @@ fun ApiFriend.toDomain(): Friend {
         lastName = lastName,
         isFriend = isFriend,
         dateOfBirth = dateOfBirth,
-        nickName = nickName
+        nickName = nickName,
+        profilePictureUrl = profilePictureUrl
     )
 }
 
