@@ -21,6 +21,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.friends.presentation.ui.components.FriendItem
+import com.friends.presentation.ui.states.FriendStates
 import com.friends.presentation.viewmodels.FriendsViewModel
 
 @Composable
@@ -29,7 +30,7 @@ fun FriendsScreen(
     onFriendItemClick: (friendID: String) -> Unit
 ) {
     val friendGroups by viewModel.friendGroups.collectAsState()
-    var text by remember { mutableStateOf("") }
+    var text by remember { mutableStateOf(FriendStates.searchText) }
 
     Scaffold(
         topBar = { },

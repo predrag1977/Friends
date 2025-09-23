@@ -3,6 +3,7 @@ package com.friends.presentation.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.friends.presentation.models.FriendUi
+import com.friends.presentation.ui.states.FriendStates
 import com.friends.presentation.usecases.GetFriendUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,6 +35,7 @@ class FriendsViewModel @Inject constructor(
     }
 
     fun searchFriends(text: String) {
+        FriendStates.searchText = text
         val filteredFriends = _friends.value.filter {
             it.fullName.contains(text, ignoreCase = true)
         }
